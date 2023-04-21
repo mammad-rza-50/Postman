@@ -1,0 +1,547 @@
+{
+	"info": {
+		"_postman_id": "a2eeba80-27ac-4204-bcf0-e9e169cac987",
+		"name": "Campus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8e4c03d4-b6c9-41b2-b243-524871611317",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "47389fee-8edd-4834-89d1-fee7a989c047",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "e2e82523-2ae6-4fbb-94f8-dbdb49798f08",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "953855dc118c8e3317cbfd8896d71a85ddde430a9c26f6d46ee37d09e712bbe7"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"turkeyts\",\r\n    \"password\": \"TechnoStudy123\",\r\n    \"rememberMe\": \"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://test.mersys.io/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Country",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8e4c03d4-b6c9-41b2-b243-524871611317",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "47389fee-8edd-4834-89d1-fee7a989c047",
+						"exec": [
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"var countNm= pm.response.json().name;\r",
+							"pm.collectionVariables.set(\"countryName\", countNm);\r",
+							"\r",
+							"pm.collectionVariables.set(\"countryID\",pm.response.json().id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "74e34dc1-6678-4ed7-92be-567cfb254981",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "953855dc118c8e3317cbfd8896d71a85ddde430a9c26f6d46ee37d09e712bbe7"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": null,\r\n  \"name\": \"{{$randomCountry}} - {{$randomInt}}\",\r\n  \"code\": \"{{$randomCountryCode}}\",\r\n  \"translateName\": [],\r\n  \"hasState\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://test.mersys.io/school-service/api/countries"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Country Negativ",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8e4c03d4-b6c9-41b2-b243-524871611317",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "47389fee-8edd-4834-89d1-fee7a989c047",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "5f827191-8d2d-45db-be5e-4fedebe48984",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "953855dc118c8e3317cbfd8896d71a85ddde430a9c26f6d46ee37d09e712bbe7"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": null,\r\n  \"name\": \"{{countryName}}\",\r\n  \"code\": \"00\",\r\n  \"translateName\": [],\r\n  \"hasState\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://test.mersys.io/school-service/api/countries"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Country",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8e4c03d4-b6c9-41b2-b243-524871611317",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "47389fee-8edd-4834-89d1-fee7a989c047",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "809a52d3-b6fb-4f89-beec-d416aa87acc1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "953855dc118c8e3317cbfd8896d71a85ddde430a9c26f6d46ee37d09e712bbe7"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"{{countryID}}\",\r\n  \"name\": \"{{countryName}}\",\r\n  \"code\": \"NU1\",\r\n  \"translateName\": [],\r\n  \"hasState\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://test.mersys.io/school-service/api/countries"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Country",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8e4c03d4-b6c9-41b2-b243-524871611317",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "47389fee-8edd-4834-89d1-fee7a989c047",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "c89d8cfe-b54a-4214-93bd-78d649f9fa67",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "953855dc118c8e3317cbfd8896d71a85ddde430a9c26f6d46ee37d09e712bbe7"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://test.mersys.io/school-service/api/countries/{{countryID}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Country Negative",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8e4c03d4-b6c9-41b2-b243-524871611317",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "47389fee-8edd-4834-89d1-fee7a989c047",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "698bed29-922c-4973-ae37-8c1b67927d1a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://test.mersys.io/school-service/api/countries/{{countryID}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Greade Levels",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f0c8a94e-874d-4a64-96d9-86d798636d96",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"var gradeID = pm.response.json().id;\r",
+							"var fullname = pm.response.json().name;\r",
+							"var shortname = pm.response.json().shortName;\r",
+							"var order = pm.response.json().order;\r",
+							"pm.collectionVariables.set(\"gradeID\", gradeID);\r",
+							"pm.collectionVariables.set(\"fullName\", fullname);\r",
+							"pm.collectionVariables.set(\"shortName\", shortname);\r",
+							"pm.collectionVariables.set(\"order\", order);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "316bad1b-f08a-4c8a-9f0c-aa9e495e6393",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "953855dc118c8e3317cbfd8896d71a85ddde430a9c26f6d46ee37d09e712bbe7"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": null,\r\n  \"name\": \"{{$randomFullName}}\",\r\n  \"shortName\": \"{{$randomUserName}}\",\r\n  \"nextGradeLevel\": null,\r\n  \"order\": \"{{$randomInt}}\",\r\n  \"translateName\": [],\r\n  \"translateShortName\": [],\r\n  \"active\": true,\r\n  \"schoolIds\": [\r\n    \"6390f3207a3bcb6a7ac977f9\"\r\n  ],\r\n  \"showToAllSchools\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://test.mersys.io/school-service/api/grade-levels"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Greade Levels Negative",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f0c8a94e-874d-4a64-96d9-86d798636d96",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "9876b50f-a818-4c54-b858-98c1e18a3234",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "953855dc118c8e3317cbfd8896d71a85ddde430a9c26f6d46ee37d09e712bbe7"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": null,\r\n  \"name\": \"{{fullName}}\",\r\n  \"shortName\": \"{{shortName}}\",\r\n  \"nextGradeLevel\": null,\r\n  \"order\": \"{{order}}\",\r\n  \"translateName\": [],\r\n  \"translateShortName\": [],\r\n  \"active\": true,\r\n  \"schoolIds\": [\r\n    \"6390f3207a3bcb6a7ac977f9\"\r\n  ],\r\n  \"showToAllSchools\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://test.mersys.io/school-service/api/grade-levels"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Greade Levels",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f0c8a94e-874d-4a64-96d9-86d798636d96",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "98495f24-a669-4934-b933-4cc48331cf1c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "953855dc118c8e3317cbfd8896d71a85ddde430a9c26f6d46ee37d09e712bbe7"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://test.mersys.io/school-service/api/grade-levels/{{gradeID}}"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Greade Levels Negative",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f0c8a94e-874d-4a64-96d9-86d798636d96",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "b4505512-3b1e-49c9-be7a-96f22611ce01",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "953855dc118c8e3317cbfd8896d71a85ddde430a9c26f6d46ee37d09e712bbe7"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": null,\r\n  \"name\": \"{{$randomFullName}}\",\r\n  \"shortName\": \"{{$randomUserName}}\",\r\n  \"nextGradeLevel\": null,\r\n  \"order\": \"{{$randomInt}}\",\r\n  \"translateName\": [],\r\n  \"translateShortName\": [],\r\n  \"active\": true,\r\n  \"schoolIds\": [\r\n    \"6390f3207a3bcb6a7ac977f9\"\r\n  ],\r\n  \"showToAllSchools\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://test.mersys.io/school-service/api/grade-levels/{{gradeID}}"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "ca56405f-0d88-42a9-929c-5e1a9b7869bf",
+			"key": "userName",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "64819ec4-080d-4020-a04f-da43138bce68",
+			"key": "countryName",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "63ea2d2c-a09c-47c2-a509-d34b4c97d09d",
+			"key": "countryID",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "2897ccb1-609b-4e34-92a4-c45093e2d471",
+			"key": "fullName",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "1f81fa22-2f74-4c0e-891e-1d61e7be2de4",
+			"key": "shortName",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "497aa7b7-cd1a-4f47-8699-c7a660adc38b",
+			"key": "order",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "bf6ba8e2-ec3f-4d25-9524-424b8733b8e8",
+			"key": "gradeID",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
