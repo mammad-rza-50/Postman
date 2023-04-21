@@ -1,0 +1,274 @@
+{
+	"info": {
+		"_postman_id": "2dc08d81-2f5f-450b-a691-106c59f7a76f",
+		"name": "GoRestComments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Comments List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0b61b32c-f0bf-4429-91a6-b32a532f062b",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "a136f834-2bae-4bb8-88c4-f22f7ca3a3e5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "953855dc118c8e3317cbfd8896d71a85ddde430a9c26f6d46ee37d09e712bbe7"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://gorest.co.in/public/v2/comments"
+			},
+			"response": []
+		},
+		{
+			"name": "POST Create a comment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0b61b32c-f0bf-4429-91a6-b32a532f062b",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var id = jsonData.id;\r",
+							"    console.log(id);\r",
+							"    pm.collectionVariables.set(\"commentID\", id);\r",
+							"\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "5f984aa5-969a-4c26-801d-4b3b96400bd9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "953855dc118c8e3317cbfd8896d71a85ddde430a9c26f6d46ee37d09e712bbe7"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"post_id\": 14024,\r\n        \"name\": \"{{$randomFullName}}\",\r\n        \"email\": \"{{$randomEmail}}\",\r\n        \"body\": \"Qui velit dolor.\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://gorest.co.in/public/v2/comments"
+			},
+			"response": []
+		},
+		{
+			"name": "GET Comment By ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0b61b32c-f0bf-4429-91a6-b32a532f062b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "8039b71d-4ec5-4275-abd7-85391a4781dd",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "953855dc118c8e3317cbfd8896d71a85ddde430a9c26f6d46ee37d09e712bbe7"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://gorest.co.in/public/v2/comments/{{commentID}}"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Update comment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0b61b32c-f0bf-4429-91a6-b32a532f062b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "6af6bbce-981a-4d20-8415-da127f9e5e2d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "953855dc118c8e3317cbfd8896d71a85ddde430a9c26f6d46ee37d09e712bbe7"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://gorest.co.in/public/v2/comments/{{commentID}}"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Delete comment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0b61b32c-f0bf-4429-91a6-b32a532f062b",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "63b53a42-ee04-4873-81cd-2d69ebdeef31",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "953855dc118c8e3317cbfd8896d71a85ddde430a9c26f6d46ee37d09e712bbe7"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://gorest.co.in/public/v2/comments/{{commentID}}"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Delete comment Negative",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0b61b32c-f0bf-4429-91a6-b32a532f062b",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "8bcc3be9-a0da-4053-a820-81b7a03e176b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "953855dc118c8e3317cbfd8896d71a85ddde430a9c26f6d46ee37d09e712bbe7"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://gorest.co.in/public/v2/comments/{{commentID}}"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "8a8626f3-1e39-4635-a4cc-015ad6784cb6",
+			"key": "commentID",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
