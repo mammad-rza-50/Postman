@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "42d48659-d921-4158-a385-17c38c14da3f",
+		"name": "GoRestPosts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Posts List",
+			"_postman_id": "14fbe59e-d75c-4f89-9755-0db924c69fd0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "953855dc118c8e3317cbfd8896d71a85ddde430a9c26f6d46ee37d09e712bbe7"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://gorest.co.in/public/v2/posts/"
+			},
+			"response": []
+		},
+		{
+			"name": "POST Create a post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4d27dd35-18ab-4d8e-b1f2-d16880484f08",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"\r",
+							" var jsonData = pm.response.json();\r",
+							" var id = jsonData.id;\r",
+							" console.log(id);\r",
+							" pm.collectionVariables.set(\"postID\",id);\r",
+							" \r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "a2a74a94-7d8c-42e9-a2d4-222d09b72728",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "953855dc118c8e3317cbfd8896d71a85ddde430a9c26f6d46ee37d09e712bbe7"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"user_id\": 1124402,\r\n        \"title\": \"Molestias accendo quas laborum cupiditas caritas defigo vis voluptatem rerum.\",\r\n        \"body\": \"Deprecator quod cornu. Asper stultus attonbitus. Pax tyrannus defessus. Arto apud communis. Tepesco voro thema. Accusamus tremo calculus. Vitae cupio tollo. Vomer eius consequuntur. Voluptatem usus utroque. Beatae animadverto vicissitudo. Succurro angelus voco. Ut tot qui. Summisse torqueo commemoro. Adduco bene autem. Totam avarus amaritudo. Tot decumbo solutio. Termes vester valde.\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://gorest.co.in/public/v2/posts/"
+			},
+			"response": []
+		},
+		{
+			"name": "GET Post By ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ada1e455-80d1-432d-8a13-c9c99dc3a742",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "e1f3bdb6-2c88-4093-b589-fbb2ca232a39",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "953855dc118c8e3317cbfd8896d71a85ddde430a9c26f6d46ee37d09e712bbe7"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://gorest.co.in/public/v2/posts/{{postID}}"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Update a post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e9413728-0f3f-44ee-b1b3-1c36d863cc33",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "ebf89618-ad47-45b2-b31d-5382ee01f9d8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "953855dc118c8e3317cbfd8896d71a85ddde430a9c26f6d46ee37d09e712bbe7"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://gorest.co.in/public/v2/posts/{{postID}}"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE delete post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e9413728-0f3f-44ee-b1b3-1c36d863cc33",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "49945538-69be-44f8-bae4-869bcdbb9321",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "953855dc118c8e3317cbfd8896d71a85ddde430a9c26f6d46ee37d09e712bbe7"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://gorest.co.in/public/v2/posts/{{postID}}"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE delete post Negative",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e9413728-0f3f-44ee-b1b3-1c36d863cc33",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "b55523ce-7a88-4438-b679-a80e1774e050",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "953855dc118c8e3317cbfd8896d71a85ddde430a9c26f6d46ee37d09e712bbe7"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://gorest.co.in/public/v2/posts/{{postID}}"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "a39f0b0d-cdbd-423a-9d8b-54b3be0322d1",
+			"key": "postID",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
