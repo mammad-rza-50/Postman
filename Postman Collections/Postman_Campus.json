@@ -31,7 +31,7 @@
 					}
 				}
 			],
-			"_postman_id": "e2e82523-2ae6-4fbb-94f8-dbdb49798f08",
+			"id": "e2e82523-2ae6-4fbb-94f8-dbdb49798f08",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -89,7 +89,7 @@
 					}
 				}
 			],
-			"_postman_id": "74e34dc1-6678-4ed7-92be-567cfb254981",
+			"id": "74e34dc1-6678-4ed7-92be-567cfb254981",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -143,7 +143,7 @@
 					}
 				}
 			],
-			"_postman_id": "5f827191-8d2d-45db-be5e-4fedebe48984",
+			"id": "5f827191-8d2d-45db-be5e-4fedebe48984",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -195,7 +195,7 @@
 					}
 				}
 			],
-			"_postman_id": "809a52d3-b6fb-4f89-beec-d416aa87acc1",
+			"id": "809a52d3-b6fb-4f89-beec-d416aa87acc1",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -247,7 +247,7 @@
 					}
 				}
 			],
-			"_postman_id": "c89d8cfe-b54a-4214-93bd-78d649f9fa67",
+			"id": "c89d8cfe-b54a-4214-93bd-78d649f9fa67",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -299,7 +299,7 @@
 					}
 				}
 			],
-			"_postman_id": "698bed29-922c-4973-ae37-8c1b67927d1a",
+			"id": "698bed29-922c-4973-ae37-8c1b67927d1a",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -343,7 +343,7 @@
 					}
 				}
 			],
-			"_postman_id": "316bad1b-f08a-4c8a-9f0c-aa9e495e6393",
+			"id": "316bad1b-f08a-4c8a-9f0c-aa9e495e6393",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -385,7 +385,7 @@
 					}
 				}
 			],
-			"_postman_id": "9876b50f-a818-4c54-b858-98c1e18a3234",
+			"id": "9876b50f-a818-4c54-b858-98c1e18a3234",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -429,7 +429,7 @@
 					}
 				}
 			],
-			"_postman_id": "98495f24-a669-4934-b933-4cc48331cf1c",
+			"id": "98495f24-a669-4934-b933-4cc48331cf1c",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -473,7 +473,7 @@
 					}
 				}
 			],
-			"_postman_id": "b4505512-3b1e-49c9-be7a-96f22611ce01",
+			"id": "b4505512-3b1e-49c9-be7a-96f22611ce01",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -495,53 +495,46 @@
 						}
 					}
 				},
-				"url": "https://test.mersys.io/school-service/api/grade-levels/{{gradeID}}"
+				"url": "{{URL}}/school-service/api/grade-levels/{{gradeID}}"
 			},
 			"response": []
 		}
 	],
 	"variable": [
 		{
-			"id": "ca56405f-0d88-42a9-929c-5e1a9b7869bf",
+			"id": "1dae6c4d-985e-489c-a502-ced5eb7b29ce",
 			"key": "userName",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "64819ec4-080d-4020-a04f-da43138bce68",
+			"id": "53cf0ee4-560b-4935-a1e6-4f181d1f3197",
 			"key": "countryName",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "63ea2d2c-a09c-47c2-a509-d34b4c97d09d",
+			"id": "4c89a963-c5eb-4fbe-9f26-792079e7b1ce",
 			"key": "countryID",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "2897ccb1-609b-4e34-92a4-c45093e2d471",
+			"id": "0920472f-7df1-4ea1-b34e-bf6d0a05a436",
 			"key": "fullName",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "1f81fa22-2f74-4c0e-891e-1d61e7be2de4",
+			"id": "61db6f95-140d-4316-9f80-afb14dbf2f17",
 			"key": "shortName",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "497aa7b7-cd1a-4f47-8699-c7a660adc38b",
+			"id": "8bec543f-03a5-4ca2-a759-aeb157dd4035",
 			"key": "order",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "bf6ba8e2-ec3f-4d25-9524-424b8733b8e8",
+			"id": "edd36da8-d1c1-4ff4-b460-09c7ea224c26",
 			"key": "gradeID",
-			"value": "",
-			"type": "string"
+			"value": ""
 		}
 	]
 }
