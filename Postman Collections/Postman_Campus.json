@@ -451,7 +451,7 @@
 						}
 					}
 				},
-				"url": "https://test.mersys.io/school-service/api/grade-levels/{{gradeID}}"
+				"url": "{{URL}}/school-service/api/grade-levels/{{gradeID}}"
 			},
 			"response": []
 		},
@@ -502,37 +502,37 @@
 	],
 	"variable": [
 		{
-			"id": "1dae6c4d-985e-489c-a502-ced5eb7b29ce",
+			"id": "4502cf58-3f57-4fd0-96f1-37dde5705b97",
 			"key": "userName",
 			"value": ""
 		},
 		{
-			"id": "53cf0ee4-560b-4935-a1e6-4f181d1f3197",
+			"id": "ed7ef96d-448c-4608-8408-4b525880f9e8",
 			"key": "countryName",
 			"value": ""
 		},
 		{
-			"id": "4c89a963-c5eb-4fbe-9f26-792079e7b1ce",
+			"id": "39987abf-99ba-418b-87b6-aaa77756ec7c",
 			"key": "countryID",
 			"value": ""
 		},
 		{
-			"id": "0920472f-7df1-4ea1-b34e-bf6d0a05a436",
+			"id": "691249f1-72cd-40e6-bb4b-6784fb0af656",
 			"key": "fullName",
 			"value": ""
 		},
 		{
-			"id": "61db6f95-140d-4316-9f80-afb14dbf2f17",
+			"id": "45d427ee-c1fd-4dc4-be89-0bacbf6db30f",
 			"key": "shortName",
 			"value": ""
 		},
 		{
-			"id": "8bec543f-03a5-4ca2-a759-aeb157dd4035",
+			"id": "6362b5a6-9c88-4cba-bbca-4b43b9a5e50c",
 			"key": "order",
 			"value": ""
 		},
 		{
-			"id": "edd36da8-d1c1-4ff4-b460-09c7ea224c26",
+			"id": "7e1d94d0-41de-416e-9f8c-bc6d7142120b",
 			"key": "gradeID",
 			"value": ""
 		}
