@@ -53,7 +53,7 @@
 						}
 					}
 				},
-				"url": "https://test.mersys.io/auth/login"
+				"url": "{{URL}}/auth/login"
 			},
 			"response": []
 		},
@@ -502,37 +502,37 @@
 	],
 	"variable": [
 		{
-			"id": "56162c52-f4c6-489b-90db-86ece6e3bd75",
+			"id": "b42e9897-ead3-4d32-b391-5c891f2c8980",
 			"key": "userName",
 			"value": ""
 		},
 		{
-			"id": "3641b657-c487-4646-a8ee-724352bf0b56",
+			"id": "7548c4b4-d7eb-4efd-8f63-dd4e6debde6f",
 			"key": "countryName",
 			"value": ""
 		},
 		{
-			"id": "4b4b7369-41b6-4bc4-8ea6-a755ef2e0a12",
+			"id": "98165bac-863f-41eb-80a0-da829788a056",
 			"key": "countryID",
 			"value": ""
 		},
 		{
-			"id": "110a3170-b2d9-47ab-9a94-d9ff96005285",
+			"id": "b5362963-974c-4165-acf1-03958641ad19",
 			"key": "fullName",
 			"value": ""
 		},
 		{
-			"id": "4dda14af-2718-496e-8e9d-1efd19e7d62c",
+			"id": "749db34a-0ca8-4509-b715-fb2cd064f079",
 			"key": "shortName",
 			"value": ""
 		},
 		{
-			"id": "a865e520-4af7-4d0f-b7a6-82df45d1e25d",
+			"id": "cde83ccb-94ee-4c22-813e-785d9224face",
 			"key": "order",
 			"value": ""
 		},
 		{
-			"id": "2f5512d9-265d-41f1-93f2-a9094272e9f4",
+			"id": "802cd4e6-ee99-41f8-9d06-51d5b12f005e",
 			"key": "gradeID",
 			"value": ""
 		}
