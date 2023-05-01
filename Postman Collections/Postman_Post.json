@@ -7,7 +7,7 @@
 	"item": [
 		{
 			"name": "GET Posts List",
-			"_postman_id": "14fbe59e-d75c-4f89-9755-0db924c69fd0",
+			"id": "14fbe59e-d75c-4f89-9755-0db924c69fd0",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -55,7 +55,7 @@
 					}
 				}
 			],
-			"_postman_id": "a2a74a94-7d8c-42e9-a2d4-222d09b72728",
+			"id": "a2a74a94-7d8c-42e9-a2d4-222d09b72728",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -97,7 +97,7 @@
 					}
 				}
 			],
-			"_postman_id": "e1f3bdb6-2c88-4093-b589-fbb2ca232a39",
+			"id": "e1f3bdb6-2c88-4093-b589-fbb2ca232a39",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -139,7 +139,7 @@
 					}
 				}
 			],
-			"_postman_id": "ebf89618-ad47-45b2-b31d-5382ee01f9d8",
+			"id": "ebf89618-ad47-45b2-b31d-5382ee01f9d8",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -181,7 +181,7 @@
 					}
 				}
 			],
-			"_postman_id": "49945538-69be-44f8-bae4-869bcdbb9321",
+			"id": "49945538-69be-44f8-bae4-869bcdbb9321",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -223,7 +223,7 @@
 					}
 				}
 			],
-			"_postman_id": "b55523ce-7a88-4438-b679-a80e1774e050",
+			"id": "b55523ce-7a88-4438-b679-a80e1774e050",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -252,10 +252,9 @@
 	],
 	"variable": [
 		{
-			"id": "a39f0b0d-cdbd-423a-9d8b-54b3be0322d1",
+			"id": "45a31718-e264-46c5-847b-8347ab3224b7",
 			"key": "postID",
-			"value": "",
-			"type": "string"
+			"value": ""
 		}
 	]
 }
