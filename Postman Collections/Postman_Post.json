@@ -48,7 +48,7 @@
 							" var id = jsonData.id;\r",
 							" console.log(id);\r",
 							" pm.collectionVariables.set(\"postID\",id);\r",
-							" \r",
+							" pm.collectionVariables.set(\"user_ID\",user_id);\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -70,7 +70,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"user_id\": 1124402,\r\n        \"title\": \"Molestias accendo quas laborum cupiditas caritas defigo vis voluptatem rerum.\",\r\n        \"body\": \"Deprecator quod cornu. Asper stultus attonbitus. Pax tyrannus defessus. Arto apud communis. Tepesco voro thema. Accusamus tremo calculus. Vitae cupio tollo. Vomer eius consequuntur. Voluptatem usus utroque. Beatae animadverto vicissitudo. Succurro angelus voco. Ut tot qui. Summisse torqueo commemoro. Adduco bene autem. Totam avarus amaritudo. Tot decumbo solutio. Termes vester valde.\"\r\n    }",
+					"raw": "{\r\n    \r\n        \"user_id\": 1313031,\r\n        \"title\": \"Vicissitudo est demoror antea adsidue demum desparatus.\",\r\n        \"body\": \"Desparatus cunae facilis. Dolores vilitas caput. Verto conqueror iure. Bellicus aliquid tamdiu. Hic surgo stultus. Ager custodia complectus. Amicitia cervus sodalitas. Socius taedium campana. Similique varius atrocitas. Nihil ago alii. Patruus vacuus nulla. Curto est delectus. Sollicito decimus omnis. Soleo cresco circumvenio. Villa thermae cito. Sophismata cubo veritatis.\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -252,7 +252,7 @@
 	],
 	"variable": [
 		{
-			"id": "95521725-b941-4539-aed8-2b24b9ceb15d",
+			"id": "0e3781eb-ce02-47fc-8154-c057417d9423",
 			"key": "postID",
 			"value": ""
 		}
