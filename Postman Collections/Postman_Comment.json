@@ -169,7 +169,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{\r\n        \"name\": \"{{$randomLastName}}\",\r\n        \"email\": \"{{$randomEmail}}\",\r\n        \"body\": \"{{$randomJobTitle}}\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -267,7 +267,7 @@
 	],
 	"variable": [
 		{
-			"id": "ce3cd5e2-efbd-4a06-837e-3845040682ee",
+			"id": "3e4013ea-1955-46a3-b246-55e81300fade",
 			"key": "commentID",
 			"value": ""
 		}
