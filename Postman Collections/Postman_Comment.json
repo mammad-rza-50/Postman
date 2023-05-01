@@ -85,7 +85,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": " {\r\n        \"post_id\": 14024,\r\n        \"name\": \"{{$randomFullName}}\",\r\n        \"email\": \"{{$randomEmail}}\",\r\n        \"body\": \"Qui velit dolor.\"\r\n    }",
+					"raw": "  {\r\n        \"post_id\": 17228,\r\n        \"name\": \"{{$randomLastName}}\",\r\n        \"email\": \"{{$randomEmail}}\",\r\n        \"body\": \"{{$randomJobTitle}}\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -267,7 +267,7 @@
 	],
 	"variable": [
 		{
-			"id": "3e4013ea-1955-46a3-b246-55e81300fade",
+			"id": "592ebfd1-59d9-4aed-9e88-c301816c088c",
 			"key": "commentID",
 			"value": ""
 		}
