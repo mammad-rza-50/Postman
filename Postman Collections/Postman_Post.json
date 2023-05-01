@@ -7,6 +7,20 @@
 	"item": [
 		{
 			"name": "GET Posts List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6e413e84-a41b-4701-b17d-3c3a8179a44b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "14fbe59e-d75c-4f89-9755-0db924c69fd0",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -252,7 +266,7 @@
 	],
 	"variable": [
 		{
-			"id": "61173532-a963-4bef-9168-697e7e559fac",
+			"id": "c3049115-61cc-4a7f-b084-933f196ab0fc",
 			"key": "postID",
 			"value": ""
 		}
