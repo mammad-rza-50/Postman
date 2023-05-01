@@ -180,7 +180,7 @@
 			"response": []
 		},
 		{
-			"name": "DELETE Delete todo",
+			"name": "DELETE Delete Todo",
 			"event": [
 				{
 					"listen": "test",
@@ -270,7 +270,7 @@
 	],
 	"variable": [
 		{
-			"id": "193d48ab-80f6-429b-b907-9308379b6e3b",
+			"id": "7a166316-5974-448b-aece-7a28d2ec4601",
 			"key": "todosID",
 			"value": ""
 		}
