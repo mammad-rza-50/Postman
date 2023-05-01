@@ -84,7 +84,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"user_id\": 1313061,\r\n        \"title\": \"Taceo defessus ea avarus crepusculum teneo.\",\r\n        \"body\": \"Decens ante adeo. Corpus ea conspergo. Non vel abstergo. Vulgo voluptatibus suppellex. Minima auris praesentium. Tam quia acies. Apparatus tutis auris. Depopulo conturbo despecto. Vorax vere tempore. Cum suffoco vinum. Comminor deleo confero. Sortitus virga fugit. Tam delinquo quo.\"\r\n    }",
+					"raw": "{\r\n  \r\n        \"title\": \"Taceo defessus ea avarus crepusculum teneo.\",\r\n        \"body\": \"Decens ante adeo. Corpus ea conspergo. Non vel abstergo. Vulgo voluptatibus suppellex. Minima auris praesentium. Tam quia acies. Apparatus tutis auris. Depopulo conturbo despecto. Vorax vere tempore. Cum suffoco vinum. Comminor deleo confero. Sortitus virga fugit. Tam delinquo quo.\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -266,7 +266,7 @@
 	],
 	"variable": [
 		{
-			"id": "57456733-ef2a-4fb0-9c2c-515abc8a0a7e",
+			"id": "db0f77f9-6640-4bb9-87c5-418012eb3472",
 			"key": "postID",
 			"value": ""
 		}
