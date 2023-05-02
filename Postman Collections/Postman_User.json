@@ -124,7 +124,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"user_id\": 1124400,\r\n        \"title\": \"Vita calculus caterva spiculum clarus conforto alo ab cohaero cultura patior.\",\r\n        \"due_on\": \"2023-05-19T00:00:00.000+05:30\",\r\n        \"status\": \"pending\"\r\n    }",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -270,7 +270,7 @@
 	],
 	"variable": [
 		{
-			"id": "af2cca0d-5f40-4f13-a530-33501c923f25",
+			"id": "2a9e1b50-05f0-4b86-9e18-ef6b0c620734",
 			"key": "todosID",
 			"value": ""
 		}
