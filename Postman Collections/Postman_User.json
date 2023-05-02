@@ -1,27 +1,31 @@
 {
 	"info": {
-		"_postman_id": "8ab81128-f368-450b-a1bd-4a91d829e767",
-		"name": "GoRestTodos",
+		"_postman_id": "70ec4d5c-b4d4-483d-82fb-bb9ea70d62ea",
+		"name": "GoRestUsers",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "GET Todos List",
+			"name": "Get Users List",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "d64320bc-43ec-4996-9018-41b96fd3b181",
+						"id": "2b79ea1e-1e18-420b-b14c-dd826ee80fb5",
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 400ms\", function (){",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);",
 							"});"
 						],
 						"type": "text/javascript"
 					}
 				}
 			],
-			"id": "522f40a5-7350-49cf-809d-7aed37df736c",
+			"id": "71e1a61c-3f8b-42b4-aa5b-b2d242872312",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -30,39 +34,55 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+					"raw": ""
 				},
-				"url": "https://gorest.co.in/public/v2/todos"
+				"url": "https://gorest.co.in/public/v2/users"
 			},
 			"response": []
 		},
 		{
-			"name": "POST Create a Todo",
+			"name": "POST Create a user",
 			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "5f73fa6e-369c-4405-98b8-c7c87332f402",
+						"exec": [
+							"// istekden evvel\r",
+							"console.log(\"Before request\")"
+						],
+						"type": "text/javascript"
+					}
+				},
 				{
 					"listen": "test",
 					"script": {
-						"id": "0ee36bda-31f1-4d82-9719-1f6c01a91cf4",
+						"id": "27e97340-ac13-4fba-9392-6275a900f2ec",
 						"exec": [
+							"// istekden sonra\r",
+							"console.log(\"After request\")\r",
+							"\r",
+							"var jsonData = pm.response.json(); // donen json data\r",
+							"var id= jsonData.id;\r",
+							"\r",
+							"console.log(id);              // consol print edir\r",
+							"console.log(jsonData.name);     // consol print edir\r",
+							"console.log(jsonData.email);        // consol print edir\r",
+							"console.log(jsonData.gender);        // consol print edir\r",
+							"console.log(pm.response.json().status);  // consol print edir\r",
+							"\r",
+							"pm.collectionVariables.set( \"userID\", id);\r",
+							"\r",
 							"pm.test(\"Status code is 201\", function () {\r",
 							"    pm.response.to.have.status(201);\r",
-							"\r",
-							"    var jsonData = pm.response.json();\r",
-							"    var id = jsonData.id;\r",
-							"\r",
-							"    pm.collectionVariables.set(\"todosID\", id);\r",
-							"});"
+							"});\r",
+							""
 						],
 						"type": "text/javascript"
 					}
 				}
 			],
-			"id": "d1d310e8-4223-41d8-b069-29c18414722f",
+			"id": "8e0a1899-dc53-4878-877f-ae442418fcf4",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -77,39 +97,34 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": " {\r\n        \"user_id\": 1313060,\r\n        \"title\": \"Deripio comptus vae corrumpo confero uredo vis tenax contabesco.\",\r\n        \"due_on\": \"2023-05-07T00:00:00.000+05:30\",\r\n        \"status\": \"completed\"\r\n    }",
+					"raw": "{\"name\":\"{{$randomFullName}}\", \"gender\":\"male\", \"email\":\"{{$randomEmail}}\", \"status\":\"active\"}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": "https://gorest.co.in/public/v2/todos"
+				"url": "https://gorest.co.in/public/v2/users"
 			},
 			"response": []
 		},
 		{
-			"name": "GET Todo By ID",
+			"name": "Get User By ID",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "0ee36bda-31f1-4d82-9719-1f6c01a91cf4",
+						"id": "77d4dec8-1d9d-4db5-81c2-c1b40899e03f",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
-							"\r",
-							"    var jsonData = pm.response.json();\r",
-							"    var id = jsonData.id;\r",
-							"\r",
-							"    pm.collectionVariables.set(\"todosID\", id);\r",
 							"});"
 						],
 						"type": "text/javascript"
 					}
 				}
 			],
-			"id": "2e730275-3d4f-4a72-8436-78bd47824395",
+			"id": "b38fe987-e654-4389-9f4b-933a252961c0",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -122,38 +137,27 @@
 				},
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "https://gorest.co.in/public/v2/todos/{{todosID}}"
+				"url": "https://gorest.co.in/public/v2/users/{{userID}}"
 			},
 			"response": []
 		},
 		{
-			"name": "PUT Update a Todo",
+			"name": "PUT Update a user",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "0ee36bda-31f1-4d82-9719-1f6c01a91cf4",
+						"id": "c0d4b5cb-6c55-4109-b74f-c6e61a6574ea",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
-							"\r",
-							"\r",
 							"});"
 						],
 						"type": "text/javascript"
 					}
 				}
 			],
-			"id": "d3ccc9db-7d0d-4512-a18a-b7467e067f4f",
+			"id": "29a4bf12-9590-452b-8207-33130484fa00",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -168,36 +172,34 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{\"name\":\"Nureddin_Rza\"}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": "https://gorest.co.in/public/v2/todos/{{todosID}}"
+				"url": "https://gorest.co.in/public/v2/users/{{userID}}"
 			},
 			"response": []
 		},
 		{
-			"name": "DELETE Delete Todo",
+			"name": "DELETE delete user",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "0ee36bda-31f1-4d82-9719-1f6c01a91cf4",
+						"id": "e7a5031b-66cc-4cc8-af2c-7519051a2ec7",
 						"exec": [
 							"pm.test(\"Status code is 204\", function () {\r",
 							"    pm.response.to.have.status(204);\r",
-							"\r",
-							"\r",
 							"});"
 						],
 						"type": "text/javascript"
 					}
 				}
 			],
-			"id": "571f0903-3a19-4c0f-870a-fc75480c8f04",
+			"id": "2d866614-b1df-46fe-a8f1-e0ee003b018d",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -219,29 +221,27 @@
 						}
 					}
 				},
-				"url": "https://gorest.co.in/public/v2/todos/{{todosID}}"
+				"url": "https://gorest.co.in/public/v2/users/{{userID}}"
 			},
 			"response": []
 		},
 		{
-			"name": "DELETE Delete Todo Negative",
+			"name": "DELETE delete user Negativ",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "0ee36bda-31f1-4d82-9719-1f6c01a91cf4",
+						"id": "e7a5031b-66cc-4cc8-af2c-7519051a2ec7",
 						"exec": [
 							"pm.test(\"Status code is 404\", function () {\r",
 							"    pm.response.to.have.status(404);\r",
-							"\r",
-							"\r",
 							"});"
 						],
 						"type": "text/javascript"
 					}
 				}
 			],
-			"id": "2fea66de-e0bf-45a6-9f1c-e7ced157aefc",
+			"id": "a374a741-d618-4cb1-b3db-cad73fad9025",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -263,15 +263,15 @@
 						}
 					}
 				},
-				"url": "https://gorest.co.in/public/v2/todos/{{todosID}}"
+				"url": "https://gorest.co.in/public/v2/users/{{userID}}"
 			},
 			"response": []
 		}
 	],
 	"variable": [
 		{
-			"id": "e5fb04c9-ff6d-4ebb-bce5-91a0e0728af1",
-			"key": "todosID",
+			"id": "9ab6e006-24fb-41bf-bb62-624b059a9406",
+			"key": "userID",
 			"value": ""
 		}
 	]
