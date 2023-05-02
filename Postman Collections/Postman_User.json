@@ -168,7 +168,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{\r\n        \"user_id\": 1313060,\r\n        \"title\": \"{{$randomWords}}\",\r\n        \"due_on\": \"2023-05-07T00:00:00.000+05:30\",\r\n        \"status\": \"completed\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -270,7 +270,7 @@
 	],
 	"variable": [
 		{
-			"id": "3080288a-b4b8-420a-b0dd-68f820b6af9f",
+			"id": "02c5c212-4737-4522-90ae-e534c686011b",
 			"key": "todosID",
 			"value": ""
 		}
