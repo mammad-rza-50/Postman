@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "a2eeba80-27ac-4204-bcf0-e9e169cac987",
-		"name": "Campus",
+		"name": "Campus Grade",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
@@ -484,37 +484,37 @@
 	],
 	"variable": [
 		{
-			"id": "3f148ba2-86bc-470f-876e-ee9fdd587777",
+			"id": "51674dd3-58a2-43f3-9010-df8a9ac271fe",
 			"key": "userName",
 			"value": ""
 		},
 		{
-			"id": "9f5ed098-54d3-4aed-a4fd-72ad84dd2ae6",
+			"id": "8d8b4d94-ea71-400b-ae20-5f8528927a80",
 			"key": "countryName",
 			"value": ""
 		},
 		{
-			"id": "fd1a171c-b5cb-47ae-b97c-072fafb8260b",
+			"id": "54e9a450-61d1-49a6-ba32-79186ee52765",
 			"key": "countryID",
 			"value": ""
 		},
 		{
-			"id": "51a71cb5-d43c-4bdd-b03a-d1aecb31d4d6",
+			"id": "2d1526b6-ed39-406d-88d8-de818139323b",
 			"key": "fullName",
 			"value": ""
 		},
 		{
-			"id": "694917bc-c5a5-48db-8bfe-d87c3b7578bc",
+			"id": "958d39d4-7474-4f2e-9561-0720ad952b3b",
 			"key": "shortName",
 			"value": ""
 		},
 		{
-			"id": "c3669a78-41a9-4159-a94d-737ecdb3fa35",
+			"id": "abebc92b-2e67-49eb-984e-383f868e0e75",
 			"key": "order",
 			"value": ""
 		},
 		{
-			"id": "99651176-5311-477f-9629-185554b469c6",
+			"id": "0321ccd1-634c-47f1-a6be-05a8edb3309b",
 			"key": "gradeID",
 			"value": ""
 		}
